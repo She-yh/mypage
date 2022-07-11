@@ -1,0 +1,46 @@
+#CommentLineContainer {
+    margin: 0;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px 3px rgba(58, 58, 58, 0.18);
+    display: inline-block;
+    border-radius: 5px;
+    background-color: var(--background-color2);
+    margin: 15px;
+    font-size: 14px;
+    width: 200px;
+    padding: 8px;
+}
+
+#CommentLineContainer:hover {
+    box-shadow: 0 0 20px 5px rgba(58, 58, 58, 0.15);
+    transform: scale(1.05);
+}
+
+#comment-content, #comment-name {
+    overflow:scroll;
+    margin: 5px;
+    text-align:left;
+}
+#comment-content{
+    max-height: 100px;
+    width:90%;
+}
+
+#comment-content::-webkit-scrollbar-thumb {
+    display: block;
+    background-color:rgb(126, 126, 126);
+}
+#comment-content::-webkit-scrollbar {
+    display: block;
+    background-color:transparent;
+    width: 3px;
+}
+#comment-time{
+    width:30%;
+    float: right;
+    text-align:right;
+}
+
+@media screen and (max-width: 767px) {
+    
+}

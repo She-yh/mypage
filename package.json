@@ -1,0 +1,65 @@
+{
+  "name": "mypage-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@babel/compat-data": "^7.14.4",
+    "@popperjs/core": "^2.9.2",
+    "animate.css": "^3.7.2",
+    "aos": "^2.3.4",
+    "axios": "^0.21.1",
+    "bootstrap": "^3.3.7",
+    "busuanzi.pure.js": "^1.0.3",
+    "core-js": "^3.6.5",
+    "cos-js-sdk-v5": "^1.2.12",
+    "element-ui": "^2.15.8",
+    "less-loader": "^9.0.0",
+    "mockm": "^1.1.25-alpha.10",
+    "popper": "^1.0.1",
+    "qs": "^5.2.0",
+    "rollup": "^2.51.1",
+    "sass-loader": "^10.1.1",
+    "swiper": "^6.7.0",
+    "vue": "^2.6.11",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-baberrage": "^3.2.4",
+    "vuex": "^3.6.2",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "jquery": "^3.6.0",
+    "mockm": "^1.1.25-alpha.10",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": false,
+    "env": {
+      "node": true,
+      "jquery": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
