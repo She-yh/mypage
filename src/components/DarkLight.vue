@@ -40,45 +40,46 @@
 </template>
 
 <script>
-import { mapState,mapMutations} from "vuex";
+import { mapState, mapMutations } from 'vuex';
+
 export default {
-  name: "DarkLight",
+  name: 'DarkLight',
   data() {
     return {
-      darkback1: "rgb(43,43,43)",
-      darkback2: "rgb(60,63,65)",
-      darktext: "rgb(233,245,251)",
-      darkcomments: "rgb(35,37,39)",
-      lightback1: "rgb(245,245,245)",
-      lightback2: "rgb(255,255,255)",
-      lighttext: "rgb(83,85,86)",
-      lightcomments: "rgb(255,255,255)",
-      darktrans:"rgba(60,63,65,0)",
-      lighttrans:"rgba(255,255,255,0)",
-    }
+      darkback1: 'rgb(43,43,43)',
+      darkback2: 'rgb(60,63,65)',
+      darktext: 'rgb(233,245,251)',
+      darkcomments: 'rgb(35,37,39)',
+      lightback1: 'rgb(245,245,245)',
+      lightback2: 'rgb(255,255,255)',
+      lighttext: 'rgb(83,85,86)',
+      lightcomments: 'rgb(255,255,255)',
+      darktrans: 'rgba(60,63,65,0)',
+      lighttrans: 'rgba(255,255,255,0)',
+    };
   },
-  computed: { ...mapState(["theme"]) },
+  computed: { ...mapState(['theme']) },
   methods: {
     ...mapMutations(['changeTheme']),
-    changetheme: function () {
+    changetheme() {
       if (this.theme) {
-        document.documentElement.style.setProperty("--background-color1", this.lightback1);
-        document.documentElement.style.setProperty("--background-color2", this.lightback2);
-        document.documentElement.style.setProperty("--text-color", this.lighttext);
-        document.documentElement.style.setProperty("--comments-line-back-color", this.lightcomments);
-        document.documentElement.style.setProperty("--trans-color", this.lighttrans);
+        document.documentElement.style.setProperty('--background-color1', this.lightback1);
+        document.documentElement.style.setProperty('--background-color2', this.lightback2);
+        document.documentElement.style.setProperty('--text-color', this.lighttext);
+        document.documentElement.style.setProperty('--comments-line-back-color', this.lightcomments);
+        document.documentElement.style.setProperty('--trans-color', this.lighttrans);
         this.changeTheme(false);
       } else {
-        document.documentElement.style.setProperty("--background-color1", this.darkback1);
-        document.documentElement.style.setProperty("--background-color2", this.darkback2);
-        document.documentElement.style.setProperty("--text-color", this.darktext);
-        document.documentElement.style.setProperty("--comments-line-back-color", this.darkcomments);
-        document.documentElement.style.setProperty("--trans-color", this.darktrans);
+        document.documentElement.style.setProperty('--background-color1', this.darkback1);
+        document.documentElement.style.setProperty('--background-color2', this.darkback2);
+        document.documentElement.style.setProperty('--text-color', this.darktext);
+        document.documentElement.style.setProperty('--comments-line-back-color', this.darkcomments);
+        document.documentElement.style.setProperty('--trans-color', this.darktrans);
         this.changeTheme(true);
       }
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped>

@@ -37,8 +37,7 @@
 }
 #comment-time{
     width:30%;
-    float: right;
-    text-align:right;
+    margin: 5px;
 }
 
 @media screen and (max-width: 767px) {

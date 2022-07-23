@@ -22,11 +22,11 @@
   </section>
 </template>
 <script>
-import {Swiper, SwiperSlide, directive} from 'vue-awesome-swiper'
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
 
 export default {
-  name: 'Picbar',
+  name: 'PicPanel',
   components: {
     Swiper,
     SwiperSlide
@@ -34,42 +34,42 @@ export default {
   directives: {
     swiper: directive
   },
-  data() {
+  data () {
     return {
       changeDirection: true,
       list: [{
-        time: "2014.00.00",
-        discribe: "全家福"
+        time: '2014.00.00',
+        discribe: '全家福'
       }, {
-        time: "2012.06.00",
-        discribe: "从万盛小学毕业"
+        time: '2012.06.00',
+        discribe: '从万盛小学毕业'
       }, {
-        time: "2016.06.00",
-        discribe: "从重庆二外初中毕业"
+        time: '2016.06.00',
+        discribe: '从重庆二外初中毕业'
       }, {
-        time: "2019.06.00",
-        discribe: "从重庆二外高中毕业"
+        time: '2019.06.00',
+        discribe: '从重庆二外高中毕业'
       }],
       swiperOptions: {
         slidesPerView: 'auto',
         freeMode: true,
-        loop: true,
+        loop: true
       },
       images: []
     }
   },
   methods: {
-    getimgurl() {
-      let imgurl = [];
+    getimgurl () {
+      const imgurl = []
       for (let i = 0; i < 4; i++) {
         // imgurl[i] = process.env.NODE_ENV === 'production' ? ("https://mypage-1304169477.cos.ap-shanghai.myqcloud.com/picbar-" + i + ".jpg") : "";
-          imgurl[i]="https://mypage-1304169477.cos.ap-shanghai.myqcloud.com/picbar-" + i + ".jpg";
+        imgurl[i] = 'https://mypage-1304169477.cos.ap-shanghai.myqcloud.com/picbar-' + i + '.jpg'
       }
-      this.images = imgurl;
+      this.images = imgurl
     }
   },
-  beforeMount() {
-    this.getimgurl();
+  beforeMount () {
+    this.getimgurl()
   }
 }
 </script>

@@ -28,7 +28,7 @@
 import $ from "jquery";
 import { mapState,mapMutations} from "vuex";
 export default {
-  name: "Menu",
+  name: "MenuList",
   data() {
     return {};
   },

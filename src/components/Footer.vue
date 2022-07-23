@@ -20,6 +20,6 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: 'FooterPanel'
 }
 </script>

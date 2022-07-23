@@ -15,7 +15,7 @@
           S
         </div>
         <div id="CloseContainer">
-          <i class="fa fa-minus" aria-hidden="true" @mouseenter="smaller" @mouseleave="bigger"
+          <i class="el-icon-close" aria-hidden="true" @mouseenter="smaller" @mouseleave="bigger"
              @click="close_card"></i>
         </div>
         <div id="TitleContainer">
@@ -40,57 +40,54 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
-  name: "HistoryCard",
+  name: 'HistoryCard',
   props: {
     showCard: Boolean
   },
-  data() {
+  data () {
     return {
       histories: [
-        {time: "2021.8.23", content: "第一版告终"},
-        {time: "2021.8.05", content: "词云小程序"},
-        {time: "2021.7.23", content: "更新豆瓣TOP250，解决bug"},
-        {time: "2021.7.16", content: "增加欢迎页，夜间模式"},
-        {time: "2021.6.14", content: "增加评论区，前后端交互"},
-        {time: "2021.3.24", content: "网站第一次运行在服务器上"},
-        {time: "2020.11.20", content: "购买域名、服务器"},
-        {time: "2020.11.11", content: "结束电赛，决定开始学习前端"}
+        { time: '2021.8.23', content: '第一版告终' },
+        { time: '2021.8.05', content: '词云小程序' },
+        { time: '2021.7.23', content: '更新豆瓣TOP250，解决bug' },
+        { time: '2021.7.16', content: '增加欢迎页，夜间模式' },
+        { time: '2021.6.14', content: '增加评论区，前后端交互' },
+        { time: '2021.3.24', content: '网站第一次运行在服务器上' },
+        { time: '2020.11.20', content: '购买域名、服务器' },
+        { time: '2020.11.11', content: '结束电赛，决定开始学习前端' }
       ]
     }
   },
   methods: {
-    smaller: function () {
-      document.getElementById("HisContainer").style.transform = "scale(99%)";
+    smaller () {
+      document.getElementById('HisContainer').style.transform = 'scale(99%)'
     },
-    bigger: function () {
-      document.getElementById("HisContainer").style.transform = "scale(1)";
+    bigger () {
+      document.getElementById('HisContainer').style.transform = 'scale(1)'
     },
-    close_card: function () {
-      this.$emit("changeShowCard", false);
+    close_card () {
+      this.$emit('changeShowCard', false)
     }
   },
   watch: {
-    showCard() {
-      if (this.showCard)
-        $("body").css("overflow", "hidden");
-      else
-        $("body").css("overflow", "scroll");
-    },
+    showCard () {
+      if (this.showCard) { $('body').css('overflow', 'hidden') } else { $('body').css('overflow', 'scroll') }
+    }
   },
-  beforeMount() {
-    if (window.localStorage.getItem("ShowCard") == null) {
-      window.localStorage.setItem("ShowCard", 1);
-      this.$emit("changeShowCard", true);
-      $("body").css("overflow", "hidden");
+  beforeMount () {
+    if (window.localStorage.getItem('ShowCard') == null) {
+      window.localStorage.setItem('ShowCard', 1)
+      this.$emit('changeShowCard', true)
+      $('body').css('overflow', 'hidden')
     } else {
-      this.$emit("changeShowCard", false)
+      this.$emit('changeShowCard', false)
     }
   }
 }
 </script>
 
 <style scoped>
-
 
 </style>

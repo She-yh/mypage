@@ -41,13 +41,13 @@
         transform: scale(0.9);
     }
     #topbar-right{
-        top:25px;
+        top: 22px;
         right: 30px;
     }
     #topbar-container {
         width: auto;
     }
-    .fa-bars{
+    .el-icon-s-unfold{
         display: block;
     }
 }

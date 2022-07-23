@@ -44,7 +44,7 @@
     transition: all 0.25s;
 }
 
-.fa-minus {
+.el-icon-close {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -53,16 +53,16 @@
     align-content: center;
 }
 
-.fa-minus:before {
+.el-icon-close:before {
     margin-left: 12px;
     color: rgb(217, 217, 217);
     font-size: 20px;
     line-height: 40px;
 }
 
-.fa-minus:hover {
-    transform: rotate(45deg);
-    transition: all 0.25s;
+.el-icon-close:hover {
+    transform: rotate(25deg);
+    transition: all 0.3s;
 }
 
 .visit {

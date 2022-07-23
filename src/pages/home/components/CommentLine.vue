@@ -14,14 +14,14 @@
 </template>
 
 <script>
-    export default {
-        name: "CommentLine",
-        props:{
-            name:String,
-            comments:String,
-            time:String
-        }
-    }
+export default {
+  name: 'CommentLine',
+  props: {
+    name: String,
+    comments: String,
+    time: String,
+  },
+};
 </script>
 
 <style scoped>

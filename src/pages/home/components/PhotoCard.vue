@@ -15,18 +15,18 @@
 
 <script>
 export default {
-  name: "PhotoCard",
-  props:{
-    introIcon:String,
-    introLink:String,
-    introPic:String,
-    introTitle:String,
-    introContent:String,
-    introSub:String
+  name: 'PhotoCard',
+  props: {
+    introIcon: String,
+    introLink: String,
+    introPic: String,
+    introTitle: String,
+    introContent: String,
+    introSub: String
   },
-  methods:{
-    toLink(){
-      window.open(this.introLink);
+  methods: {
+    toLink () {
+      window.open(this.introLink)
     }
   }
 }

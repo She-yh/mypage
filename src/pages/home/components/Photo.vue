@@ -21,7 +21,7 @@ export default {
       workList: [
         {
           // picSrc: "https://mypage-1304169477.cos.ap-shanghai.myqcloud.com/music.jpg",
-          workicon:"fa fa-music",
+          workicon:"el-icon-headset",
           link: "/music",
           workTitle: "网页音乐播放器",
           workContent: "学习Axios",
