@@ -3,14 +3,16 @@
 <div id="commentDelete">
     <template>
   <el-table
-    ref="multipleTable"
+    ref="singleTable"
     :data="tableData"
+    highlight-current-row
     tooltip-effect="dark"
     style="width: 100%"
-    @selection-change="handleSelectionChange">
+    @current-change="handleSelectionChange">
     <el-table-column
-      type="selection"
-      width="55">
+      prop="id"
+      label="id"
+      width="120">
     </el-table-column>
     <el-table-column
       prop="time"
@@ -29,8 +31,7 @@
     </el-table-column>
   </el-table>
   <div style="margin-top: 20px">
-    <el-button @click="toggleSelection([tableData[1], tableData[2]])">切换第二、第三行的选中状态</el-button>
-    <el-button @click="toggleSelection()">取消选择</el-button>
+    <el-button @click="deleteComments()">删除</el-button>
   </div>
 </template>
 </div>
@@ -43,7 +44,7 @@ export default {
   data () {
     return {
       tableData: [],
-      multipleSelection: []
+      currentRow: null
     }
   },
   created () {
@@ -58,27 +59,31 @@ export default {
         comment.comment = cur.comments
         comment.time = cur.time.replaceAll('-', '/').replace(/T(.)*/, '')
         this.tableData.unshift(comment)
-        console.log(comment)
       }
     }, (err) => {
       console.log(err)
     })
-    this.$nextTick(() => {
-      console.log('data', this.tableData)
-    })
   },
   methods: {
-    toggleSelection (rows) {
-      if (rows) {
-        rows.forEach(row => {
-          this.$refs.multipleTable.toggleRowSelection(row)
-        })
-      } else {
-        this.$refs.multipleTable.clearSelection()
-      }
+    deleteComments () {
+      const params = new URLSearchParams()
+      const token = localStorage.getItem('token')
+      params.append('id', this.currentRow.id)
+      axios({
+        method: 'post',
+        url: `${process.env.VUE_APP_BASE_URL}user/deleteComments`,
+        headers: {
+          Authorization: token
+        },
+        data: params
+      }).then(res => {
+        if (res.data.status === 0) {
+          console.log()
+        }
+      })
     },
     handleSelectionChange (val) {
-      this.multipleSelection = val
+      this.currentRow = val
     }
   }
 }

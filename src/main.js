@@ -23,6 +23,7 @@ import './assets/css/commentline.css'
 import './assets/css/historycard.css'
 import './assets/css/PhotoCard.css'
 import router from './router/index'
+import loginDialog from './utils/login'
 // import router from './router/index'
 window.$ = $
 AOS.init({
@@ -30,19 +31,19 @@ AOS.init({
 })
 Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
+Vue.prototype.$login = loginDialog
 new Vue({
   render: (h) => h(App),
   $,
   router,
   store
-
 }).$mount('#app')
 console.log('%c -------------------------------------------\x0a丨\x0a' +
         '丨佘远航的个人网站\x0a丨\x0a' +
         '丨© 2021 Yuanhang She. All Rights Reserved.\x0a丨\x0a' +
         ' -------------------------------------------', 'color:rgb(125, 170, 192)')
 // 锚点跳转滑动效果
-$(() => {
+Vue.nextTick(() => {
   // 锚点跳转滑动效果
   $('a[href*=\\#],area[href*=\\#]').on('click', function () {
     console.log(this.pathname)
@@ -62,10 +63,12 @@ $(() => {
     }
   })
 })
+
 function preload () {
   const bg1 = new Image()
   bg1.src = 'https://mypage-1304169477.cos.ap-shanghai.myqcloud.com/bc.jpg'
 }
+
 window.onload = function () {
   const bg2 = document.getElementById('bg2')
   bg2.style.transform = 'scale(1)'

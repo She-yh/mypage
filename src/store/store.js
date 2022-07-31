@@ -22,6 +22,7 @@ export default new Vuex.Store({
     },
     changeTheme (state, flag) {
       state.theme = flag
+      localStorage.setItem('theme', flag)
     }
   }, /* 更改值addN(第一个永远是默认的state,后面是自己的参数){}里面不能用异步操作
             this.$store.commit("mutation里的一个函数",自己的参数)

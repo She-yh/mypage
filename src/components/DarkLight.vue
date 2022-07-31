@@ -40,11 +40,11 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'DarkLight',
-  data() {
+  data () {
     return {
       darkback1: 'rgb(43,43,43)',
       darkback2: 'rgb(60,63,65)',
@@ -55,31 +55,35 @@ export default {
       lighttext: 'rgb(83,85,86)',
       lightcomments: 'rgb(255,255,255)',
       darktrans: 'rgba(60,63,65,0)',
-      lighttrans: 'rgba(255,255,255,0)',
-    };
+      lighttrans: 'rgba(255,255,255,0)'
+    }
   },
   computed: { ...mapState(['theme']) },
   methods: {
     ...mapMutations(['changeTheme']),
-    changetheme() {
+    changetheme () {
+      // console.log(flag)
       if (this.theme) {
-        document.documentElement.style.setProperty('--background-color1', this.lightback1);
-        document.documentElement.style.setProperty('--background-color2', this.lightback2);
-        document.documentElement.style.setProperty('--text-color', this.lighttext);
-        document.documentElement.style.setProperty('--comments-line-back-color', this.lightcomments);
-        document.documentElement.style.setProperty('--trans-color', this.lighttrans);
-        this.changeTheme(false);
+        document.documentElement.style.setProperty('--background-color1', this.lightback1)
+        document.documentElement.style.setProperty('--background-color2', this.lightback2)
+        document.documentElement.style.setProperty('--text-color', this.lighttext)
+        document.documentElement.style.setProperty('--comments-line-back-color', this.lightcomments)
+        document.documentElement.style.setProperty('--trans-color', this.lighttrans)
+        this.changeTheme(false)
       } else {
-        document.documentElement.style.setProperty('--background-color1', this.darkback1);
-        document.documentElement.style.setProperty('--background-color2', this.darkback2);
-        document.documentElement.style.setProperty('--text-color', this.darktext);
-        document.documentElement.style.setProperty('--comments-line-back-color', this.darkcomments);
-        document.documentElement.style.setProperty('--trans-color', this.darktrans);
-        this.changeTheme(true);
+        document.documentElement.style.setProperty('--background-color1', this.darkback1)
+        document.documentElement.style.setProperty('--background-color2', this.darkback2)
+        document.documentElement.style.setProperty('--text-color', this.darktext)
+        document.documentElement.style.setProperty('--comments-line-back-color', this.darkcomments)
+        document.documentElement.style.setProperty('--trans-color', this.darktrans)
+        this.changeTheme(true)
       }
-    },
+    }
   },
-};
+  beforeMount () {
+    localStorage.getItem('theme') === 'true' && this.changetheme(localStorage.getItem('theme'))
+  }
+}
 </script>
 
 <style scoped>
