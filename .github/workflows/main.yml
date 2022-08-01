@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+    - run: npm install && npm run build
+    
+      # 部署到 GitHub Pages
+    - name: Vue to Github Pages
+      uses: xRealNeon/VuePagesAction@1.0.1
+      with:
+        username: 'She-yh'
+        reponame: 'mypage'
+        token: ${{ secrets.ACCESS_TOKEN }} # Leave this line unchanged
+
