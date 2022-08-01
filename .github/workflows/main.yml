@@ -16,7 +16,7 @@ jobs:
     
       # 部署到 GitHub Pages
     - name: Vue to Github Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           # 这里的 ACCESS_TOKEN 名字需要和下文中的相对应
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -24,4 +24,3 @@ jobs:
           BRANCH: gh-pages
           # 打包后的文件在哪里
           FOLDER: docs/dist
-
