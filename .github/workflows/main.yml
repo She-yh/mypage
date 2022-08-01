@@ -16,9 +16,12 @@ jobs:
     
       # 部署到 GitHub Pages
     - name: Vue to Github Pages
-      uses: xRealNeon/VuePagesAction@1.0.1
-      with:
-        username: 'She-yh'
-        reponame: 'mypage'
-        token: ${{ secrets.ACCESS_TOKEN }} # Leave this line unchanged
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          # 这里的 ACCESS_TOKEN 名字需要和下文中的相对应
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          # 打包后的文件部署到哪个分支上
+          BRANCH: gh-pages
+          # 打包后的文件在哪里
+          FOLDER: docs/dist
 
