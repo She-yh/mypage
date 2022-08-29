@@ -15,7 +15,6 @@
         :time="time_list[index]"
                      :name="name_list[index]"
                      :key="id_list[index]"
-                     @click.native="delete_comments(id_list[index])"
         />
       </div>
       <div id="comment-row">
@@ -51,22 +50,6 @@ export default {
     }
   },
   methods: {
-    delete_comments (index) {
-      const password = prompt('您的操作将删除评论', '请输入管理员密码')
-      const params = new URLSearchParams()
-      params.append('id', index)
-      console.log(params)
-      if (password === '1123') {
-        axios.delete(`${process.env.VUE_APP_BASE_URL}api/comments`, params).then((response) => {
-          console.log(response)
-        }).then((error) => {
-          console.log(error)
-        })
-        alert('删除成功，请刷新页面')
-      } else {
-        alert('密码错误')
-      }
-    },
     get_comments () {
       axios.get(`${process.env.VUE_APP_BASE_URL}api/comments`).then((response) => {
         for (const cur of response.data) {

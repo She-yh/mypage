@@ -19,9 +19,9 @@ export default {
   props: {
     name: String,
     comments: String,
-    time: String,
-  },
-};
+    time: String
+  }
+}
 </script>
 
 <style scoped>

@@ -49,6 +49,7 @@ export default {
   data () {
     return {
       histories: [
+        { time: '2022.8.07', content: '目前因为服务器迁移，部分作品无法访问' },
         { time: '2021.8.23', content: '第一版告终' },
         { time: '2021.8.05', content: '词云小程序' },
         { time: '2021.7.23', content: '更新豆瓣TOP250，解决bug' },
